@@ -1,0 +1,6 @@
+# настройка сервера: установка docker и docker-compose; добавление прав пользователя и перезагрузка сервера
+---
+- name: all  configs
+  hosts: all
+  roles:
+    - preconfig
