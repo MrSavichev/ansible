@@ -1,7 +1,13 @@
 ---
 - name: Циклы
   debug:
-    msg: "{{ item.name }} is {{ item.group }}"
-  loop:
-    - { name: "Димон", group: "admin" }
-    - { name: "Герман", group: "admin" }
+    msg: "{{ item }}"
+  loop: 
+    - name: Вася
+      group: admin
+        roles:
+          admin: true
+          manager: true
+          user: true
+  loop_control:
+    label: "{{ item.name }}"
