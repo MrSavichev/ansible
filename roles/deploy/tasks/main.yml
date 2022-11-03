@@ -1,13 +1,4 @@
 ---
 - name: Циклы
   debug:
-    msg: "{{ item }}"
-  loop: 
-    - name: Вася
-      group: admin
-        roles:
-          admin: true
-          manager: true
-          user: true
-  loop_control:
-    label: "{{ item.name }}"
+    msg: "{{ lookup('file', '../meta/main.yml') }}"
