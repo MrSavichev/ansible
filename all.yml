@@ -3,5 +3,8 @@
 - name: all  configs
   hosts: all
   roles:
-    - preconfig
-    - deploy
+    - role: preconfig
+      tags: preconfig
+    - role: deploy
+      test: 0
+      tags: deploy

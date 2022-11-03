@@ -1,3 +1,3 @@
 ---
-- name: test
-  command: echo "TEST"
+- name: Задача deploy
+  command: "echo {{ test }}"
