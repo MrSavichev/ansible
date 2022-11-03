@@ -1,10 +1,11 @@
 ---
-- name: Циклы
+- name: Создание сети
+  community.docker.docker_network:
+    name: app_network
+    driver: overlay
+
+- name: Выкладка сервисов
+  include: "../services/{{ item }}/service.yml"
   vars:
-    admin:
-      - keys: a
-        values: 1
-      - keys: b
-        values: 2
-  debug:
-    msg: "{{ admin | items2dict(key_name='keys', value_name='values') }}"
+    - name: "{{ item }}"
+  loop: "{{ services }}"

@@ -47,7 +47,7 @@
 
 - name: Установка дополнительных пакетов python
   block:
-    - name: Установк pip пакетов
+    - name: Установка pip пакетов
       ansible.builtin.apt:
         name: docker
 
