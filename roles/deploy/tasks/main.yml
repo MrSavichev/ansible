@@ -1,4 +1,9 @@
 ---
 - name: Циклы
+  vars:
+    - keys: a
+      values: 1
+    - keys: b
+      values: 2
   debug:
-    msg: "{{ lookup('file', '../meta/main.yml') }}"
+    msg: "{{ admin | items2dict(key_name='keys', value_name='values') }}"
