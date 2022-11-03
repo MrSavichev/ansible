@@ -1,9 +1,10 @@
 ---
 - name: Циклы
   vars:
-    - keys: a
-      values: 1
-    - keys: b
-      values: 2
+    admin:
+      - keys: a
+        values: 1
+      - keys: b
+        values: 2
   debug:
     msg: "{{ admin | items2dict(key_name='keys', value_name='values') }}"
