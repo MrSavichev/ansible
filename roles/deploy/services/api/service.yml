@@ -17,6 +17,6 @@
             protocol: tcp
             published_port: 3002
             target_port: 3000
-        secret:
+        secrets:
           - secret_name: "{{ name }}.env"
             filename: "/opt/app/.env"
