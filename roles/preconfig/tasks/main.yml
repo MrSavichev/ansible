@@ -55,7 +55,7 @@
   block:
     - name: Добавление пользователя в группу Docker
       ansible.builtin.user:
-        name: test2 # текущий пользователь
+        name: "{{ ansible_user }}" # текущий пользователь
         groups: docker
         append: true
 
