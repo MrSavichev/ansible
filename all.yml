@@ -1,9 +1,11 @@
 # настройка сервера: установка docker и docker-compose; добавление прав пользователя и перезагрузка сервера
 ---
-- name: all  configs
+- name: deploy / build server
   hosts: all
   roles:
     - role: preconfig
       tags: preconfig
+    - role: build
+      tags: build
     - role: deploy
       tags: deploy

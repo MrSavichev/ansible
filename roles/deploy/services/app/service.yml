@@ -1,8 +1,4 @@
 ---
-- name: "[{{ name }}] Конфигурация секрета" # Обрабатываем ситуацию, когда возникает ошибка с помощью блока rsq
-  include_tasks: "../secret.yml"
-
-    
 - name: "[{{ name }}] Выкладка сервиса" # снова выкладываем сервис с необходимыми параметрами
   block:
     - name: "[{{ name }}] Выкладываем сервис"
@@ -16,8 +12,5 @@
           - mode: ingress
             protocol: tcp
             published_port: 3002
-            target_port: 3000
-        secrets:
-          - secret_name: "{{ name }}.env"
-            filename: "/opt/app/.env"
+            target_port: 80
   tags: "{{ name }}"
