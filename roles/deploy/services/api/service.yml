@@ -1,6 +1,6 @@
 ---
 - name: "[{{ name }}] Конфигурация секрета" # Обрабатываем ситуацию, когда возникает ошибка с помощью блока rsq
-  include: "../secret.yml"
+  include_tasks: "../secret.yml"
 
     
 - name: "[{{ name }}] Выкладка сервиса" # снова выкладываем сервис с необходимыми параметрами
@@ -20,3 +20,4 @@
         secrets:
           - secret_name: "{{ name }}.env"
             filename: "/opt/app/.env"
+  tags: "{{ name }}"
