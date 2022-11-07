@@ -1,4 +1,9 @@
 ---
+- name: Install bottle for Python 3.3 specifically, using the 'pip3.3' executable
+  ansible.builtin.pip:
+    name: bottle
+    executable: pip3.3
+
 - name: Создание сети
   community.docker.docker_network:
     name: "{{ networkName }}"
