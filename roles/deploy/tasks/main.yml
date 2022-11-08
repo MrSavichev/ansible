@@ -8,7 +8,7 @@
 - name: Создание сети
   community.docker.docker_network:
     name: "{{ network_Name }}"
-    driver: overlay
+    driver: bridge
 
 - name: Выкладка сервисов
   include_tasks: "../services/{{ item.name }}/service.yml"
