@@ -19,10 +19,14 @@ services: # вынесли все сервисы из ролей и общей �
   - name: converter
     version: latest
   - name: rmq
+    version: 3-management
+  - name: nginx
     version: latest
 
 non_build_services: # позволяет исключить версии, которые не будем билдить
   - name: rmq
+    version: 3-management
+  - name: nginx
     version: latest
 
 configs:
