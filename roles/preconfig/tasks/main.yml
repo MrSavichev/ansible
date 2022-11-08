@@ -20,7 +20,7 @@
 
     - name: Добавление ключа Docker
       ansible.builtin.apt_key:
-        url: https://download.docker.com/linux/ubuntu/gpg
+        url: curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
         keyring: /etc/apt/keyrings/docker.gpg
         state: present
 
